@@ -1,0 +1,5 @@
+# Pusher.app_id = 'your-pusher-app-id'
+# Pusher.key = 'your-pusher-key'
+# Pusher.secret = 'your-pusher-secret'
+
+Pusher.logger = Rails.logger
