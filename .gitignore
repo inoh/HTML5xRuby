@@ -17,6 +17,6 @@
 /tmp
 /public/assets
 
-/config/initializers/pusher.rb
+# /config/initializers/pusher.rb
 
 Gemfile.lock
