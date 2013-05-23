@@ -13,7 +13,7 @@ $(function(){
     var pusher = new Pusher('c0adf081cd0f84f6bec8');
     var channel = pusher.subscribe('sample-channel');
     channel.bind('sample-event', function(data) {
-        $("#msg").append("<p>"+data.message+"</p>");
+        $("#msg").prepend("<p>"+data.message+"</p>");
     });
     $("#input").keypress(function(e){
         if(e.keyCode ==13){
