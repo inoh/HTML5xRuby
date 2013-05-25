@@ -1,29 +1,9 @@
+<div id="status" class="label label-info">initialized</div>
+
 <div>
   <input id="input" type="text" />
   <div id="msg"></div>
 </div>
 
 <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
-<script>
-$(function(){
-    Pusher.log = function(message) {
-        if (window.console && window.console.log) window.console.log(message);
-    };
-    WEB_SOCKET_DEBUG = true;
-    var pusher = new Pusher('c0adf081cd0f84f6bec8');
-    var channel = pusher.subscribe('sample-channel');
-    channel.bind('sample-event', function(data) {
-        $("#msg").prepend("<p>"+data.message+"</p>");
-    });
-    $("#input").keypress(function(e){
-        if(e.keyCode ==13){
-            $.ajax({
-                type: "POST",
-                url: "/websocket",
-                data: "text="+$('#input').val(),
-                success: function() {$("#input").val("");},
-            });
-        }
-    });
-});
-</script>
+<%= javascript_include_tag 'websoket' %>
