@@ -1,4 +1,5 @@
 $ ->
+    WEB_SOCKET_SWF_LOCATION = "WebSocketMain.swf"
     Pusher.log = (message) ->
         window.console.log(message) if (window.console && window.console.log)
     WEB_SOCKET_DEBUG = true
