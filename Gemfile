@@ -21,3 +21,6 @@ gem 'jquery-rails'
 
 # pusher
 gem 'pusher'
+
+# haml
+gem 'haml-rails'

@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require pusher.min
+//= require web_socket
+//= require swfobject

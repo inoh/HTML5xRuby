@@ -1,0 +1,7 @@
+= javascript_include_tag 'webrtc'
+:javascript
+  window.onload = function () {
+    WR.settingVide('video');
+  }
+
+=video_tag '/videos/test.mp4', id: 'video', controls: true, autoplay: true

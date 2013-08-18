@@ -1,8 +1,27 @@
+<%= javascript_include_tag "websocket" %>
+<script type="text/javascript">
+window.onload = function () {
+
+  WS.status_label("status");
+
+  WS.subscribe('sample-channel', function (data) {
+    $("#msg").prepend("<p>"+data.message+"</p>");
+  });
+
+  $("#input").keypress(function (e) {
+    if (e.keyCode === 13) {
+      WS.publish($('#input').val(), function () {
+        $("#input").val("");
+      });
+    }
+  });
+
+}
+</script>
+
 <div id="status" class="label label-info">initialized</div>
 
 <div>
   <input id="input" type="text" />
   <div id="msg"></div>
 </div>
-
-<script src="http://js.pusher.com/2.0/pusher.min.js"></script>
