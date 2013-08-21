@@ -1,7 +1,10 @@
 = javascript_include_tag 'webrtc'
 :javascript
   window.onload = function () {
-    WR.settingVide('video');
+    WR.settingVideo(document.getElementById('video01'));
   }
 
-=video_tag '/videos/test.mp4', id: 'video', controls: true, autoplay: true
+%div{style: 'float: left;'}
+  = video_tag '/videos/test.mp4', id: 'video01', controls: true, autoplay: true, size: '300x200'
+%div
+  = video_tag '/videos/test.mp4', id: 'video02', controls: true, autoplay: true, size: '300x200'
