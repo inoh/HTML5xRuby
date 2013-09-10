@@ -1,11 +1,11 @@
-var WR = (function ($, window) {
+(function () {
 
   // Chrome
   var RTCPeerConnection = webkitRTCPeerConnection;
 
   // Chrome
-  // var connection = new RTCPeerConnection({ "iceServers": [{ "url": "stun:stun.l.google.com:19302" }] });
-  var servers = null;
+  var servers = { "iceServers": [{ "url": "stun:stun.l.google.com:19302" }] };
+  // var servers = null;
   var connections = {};
   var getUserMedia = navigator.webkitGetUserMedia.bind(navigator);
 
@@ -15,13 +15,6 @@ var WR = (function ($, window) {
       video.src = webkitURL.createObjectURL(stream);
       connect(stream);
     });
-  }
-
-  function iceCallback2(event){
-    if (event.candidate) {
-      pc1.addIceCandidate(new RTCIceCandidate(event.candidate));
-      trace("Remote ICE candidate: \n " + event.candidate.candidate);
-    }
   }
 
   function connect (stream) {
@@ -88,10 +81,10 @@ var WR = (function ($, window) {
     console.log('signalingState : ' + connection.signalingState);
   }
 
-  return {
+  this.WR = {
     settingVideo: settingVideo,
     connect: connect,
     connectionStateLog: connectionStateLog
   }
 
-})(jQuery, window);
+}).call(this);
